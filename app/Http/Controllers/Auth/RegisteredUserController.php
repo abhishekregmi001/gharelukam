@@ -42,7 +42,7 @@ class RegisteredUserController extends Controller
             'Password' => Hash::make($request->password),
             'UserType' => 2,
             'ServiceID' => 1,
-            'Source' => 'DEVICE',
+            'Source' => 'GOOGLE',  
             'Device' => 'ANDROID',
         ];
         $apiURL = 'http://gharelukam.com/gharelukam/api/register';
