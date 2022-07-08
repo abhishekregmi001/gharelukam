@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+Route::controller(GoogleController::class)->group(function(){
+    Route::get('auth/google', 'redirectToGoogle')->name('auth.google');
+    Route::get('auth/google/callback', 'handleGoogleCallback');
+});
