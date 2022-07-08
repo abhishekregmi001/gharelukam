@@ -43,11 +43,7 @@ class GoogleController extends Controller
 
         $apiURL = 'http://gharelukam.com/gharelukam/api/register';
 
-        $headers = [
-            'X-header' => 'value'
-        ];
-
-        $response = Http::withHeaders($headers)->post($apiURL, $data);
+        $response = Http::post($apiURL, $data);
 
         $statusCode = $response->status();
         $responseBody = json_decode($response->getBody(), true);
